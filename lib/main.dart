@@ -1,7 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:time_tracker_app/app/sign_in/sign_in_page.dart';
 
-main(List<String> args) {
+Future<void> main(List<String> args) async {
+  WidgetsFlutterBinding
+      .ensureInitialized(); //To run the initialization for firebase before runApp
+  await Firebase.initializeApp(); //Firebase Initialization.
   runApp(MyApp());
 }
 
