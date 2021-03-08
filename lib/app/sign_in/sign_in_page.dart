@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:time_tracker_app/app/sign_in/sign_in_buttons.dart';
 import 'package:time_tracker_app/app/sign_in/social_sign_in_button.dart';
@@ -6,17 +5,13 @@ import 'package:time_tracker_app/sercices/auth.dart';
 
 class SignInPage extends StatelessWidget {
   //Constructor fot thr class that requied onSignIn function to be called when the class is used
-  const SignInPage({Key key, @required this.auth, @required this.onSignIn})
-      : super(key: key);
+  const SignInPage({Key key, @required this.auth}) : super(key: key);
 
   final AuthBase auth;
-  //Function for callback if the user is signed in or not !
-  final void Function(User) onSignIn;
 
   Future<void> _signInAnonymously() async {
     try {
-      final user = await auth.signInAnonymously();
-      onSignIn(user);
+      await auth.signInAnonymously();
     } catch (e) {
       print(e.toString());
     }
