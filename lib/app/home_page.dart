@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:time_tracker_app/sercices/auth.dart';
+import 'package:time_tracker_app/services/auth.dart';
 
 class HomePage extends StatelessWidget {
   final AuthBase auth;
